@@ -5,6 +5,7 @@ machine:
 dependencies:
   pre:
     - echo $GOPATH
+    - export GOPATH=$(pwd)
     - go build init
     - docker build -t go-scratch -f Dockerfile --no-cache .
 test:
